@@ -162,13 +162,15 @@ def JINJA_CONFIG():
 # and js files that can be bundled together by the minify app.
 MINIFY_BUNDLES = {
     'css': {
-        'example_css': (
-            'css/examples/main.css',
+        'apply_css': (
+            'css/apply.css',
         ),
     },
     'js': {
-        'example_js': (
-            'js/libs/jquery-1.4.4.min.js',
+        'apply_js': (
+            'js/libs/jquery-1.6.1.min.js',
+            'js/libs/jquery.scrollTo-1.4.2.min.js',
+            'js/apply.js',
         ),
     }
 }
@@ -195,7 +197,7 @@ INSTALLED_APPS = (
     'jingo_minify',
     'tower',  # for ./manage.py extract (L10n)
 
-    'examples',  # Example code. Can (and should) be removed for actual projects.
+    'apply',
 
     # We need this so the jsi18n view will pick up our locale directory.
     ROOT_PACKAGE,
@@ -210,11 +212,15 @@ INSTALLED_APPS = (
     'django_sha2',  # Load after auth to monkey-patch it.
 
     'django.contrib.contenttypes',
-    # 'django.contrib.sessions',
+    'django.contrib.sessions',
     # 'django.contrib.sites',
-    # 'django.contrib.messages',
+    'django.contrib.messages',
+    
+    # Databrowse, so folks can view submissions without modifying them
+    'django.contrib.databrowse',
+    
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 

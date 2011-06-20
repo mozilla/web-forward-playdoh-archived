@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html LANG="{{ LANG }}" dir="{{ DIR }}">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>{% block page_title %}Web Forward{% endblock %}</title>
+
+    {% block site_css %}
+      {{ css('apply_css') }}
+      
+      <!--[if IE]>
+          <style type="text/css">
+              body #what #essentials {
+                  top: 0px;
+              }
+          </style>
+      <![endif]-->
+    {% endblock %}
+
+    <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+  </head>
+  <body id="page-{% block body_id %}web-forward{% endblock %}" class="no-js {% block body_classes %}{% endblock %}">
+    <div id="grid"></div>
+
+    <div id="wrapper">
+      {% block content %}{% endblock %}
+
+      <footer class="cf">
+        <div class="c6">
+          © Mozilla 2011
+        </div>
+      </footer>
+    </div>
+
+    {% block site_js %}
+      <script>
+          document.createElement("section");
+          document.createElement("article");  
+          document.createElement("footer");  
+          document.createElement("header");  
+          document.createElement("hgroup");  
+          document.createElement("nav");  
+      </script>
+
+      {{ js('apply_js') }}
+    {% endblock %}
+  </body>
+</html>

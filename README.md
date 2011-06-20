@@ -1,17 +1,12 @@
-playdoh
-=======
+Web Forward
+===========
 
-Mozilla's Playdoh is a web application template based on [Django][django].
+Web Forward is an innovation acceleration program from Mozilla Labs.
 
-Patches are welcome! Feel free to fork and contribute to this project on
-[github][gh-playdoh].
-
-Full [documentation][docs] is available as well.
+It's a simple Django site based on [Mozilla's playdoh][gh-playdoh].
 
 
-[django]: http://www.djangoproject.com/
 [gh-playdoh]: https://github.com/mozilla/playdoh
-[docs]: http://playdoh.rtfd.org/
 
 
 License

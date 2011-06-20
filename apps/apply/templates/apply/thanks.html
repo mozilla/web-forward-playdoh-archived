@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_title %}Web Forward — Thanks!Your application has been
+submitted!{% endblock %}
+
+{% block body_id %}thanks{% endblock %}
+{% block body_classes %}white{% endblock %}
+
+{% block content %}
+<section id="thanks">
+  <div>
+    <h1>Thanks for Submitting Your Application</h1>
+    
+    <p>
+      We'll look it over and get in touch with you soon.
+      <a href="{{ url('index') }}">Go back to homepage</a>.
+    </p>
+  </div>
+</section>
+{% endblock content %}

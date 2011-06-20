@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block page_title %}Web Forward — Apply{% endblock %}
+
+{% block body_id %}apply{% endblock %}
+{% block body_classes %}white{% endblock %}
+
+{% block content %}
+<section id="tab" class="cf">
+    <div id="essentials" class="row">
+        <div class="c5"></div>
+        <div class="c1"><a href="http://mozilla.com"><img class="tab" src="{{ MEDIA_URL}}img/tab.png" alt="Mozilla"></a></div>
+    </div>
+</section>
+
+<section id="spacer" class="cf">
+    <!-- spacer section to act as background for fixed nav -->
+</section>
+
+<nav id="primaryNav" class="cf">
+    <div class="c2">
+        <h1 class="light">Web Forward Application</h1>
+    </div>
+    <ul class="c4">
+        <li><a href="{{ url('index') }}">Back to homepage</a></li>
+    </ul>
+</nav>  
+
+<section id="notes" class="cf">
+    <!-- copy in this section is up for editing -->
+    <div class="c1"></div>
+    <div class="c4">
+        <p class="serif">Please read over our application form carefully before filling it in. Fill out as many fields as you feel applies to your project and we will get back to you in a timely manner.
+    </div>
+</section>
+
+<form action="{{ url('apply') }}" method="POST" id="form" class="cf">
+	{{ csrf() }}
+	
+	{{ form.management_form }}
+	
+  {% for f in form %}
+    <div id="{{ f.name }}-container" class="field">
+      {{ f.label_tag() }}
+      {{ form.errors[f.name] }}
+      {{ f }}
+    </div>
+  {% endfor %}
+	
+	<input type="submit" id="submit" value="Submit Application">
+	
+	<div class="clear"></div>
+</form>
+{% endblock content %}
