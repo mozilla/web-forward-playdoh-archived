@@ -71,6 +71,9 @@ class Application(models.Model):
 
     def __unicode__(self):
         """Return the first/last name of the application submitter."""
-        return u'{first_name} {last_name}, on {date}'.format(
-            first_name=self.first_name, last_name=self.last_name,
-            date=self.created_at.strftime('%x'))
+        if self.first_name and self.last_name and self.created_at:
+            return u'{first_name} {last_name}, on {date}'.format(
+                first_name=self.first_name, last_name=self.last_name,
+                date=self.created_at.strftime('%x'))
+        else:
+            return u'Incomplete/Invalid Application'
