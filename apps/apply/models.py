@@ -42,7 +42,7 @@ class Application(models.Model):
     why_mozilla = models.TextField(verbose_name='Why do you think Mozilla is the right place for you?')
     progress = models.TextField(verbose_name="If you've already started working on your product, how long have you been working and how many lines of code (if applicable) have you written?")
     launch_info = models.TextField(verbose_name="How far along are you? Do you have a alpha/beta/v1 yet? If not, when will you? Are you launched? If so, how many users do you have? If you're launched, what is your monthly growth rate?")
-    demo_url = models.URLField(verbose_name="If you have an online demo, what's the URL?", verify_exists=False)
+    demo_url = models.URLField(verbose_name="If you have an online demo, what's the URL?", verify_exists=False, blank=True)
     team_exclusive_members = models.TextField(verbose_name='If we bring you into the program, who of you will commit working exclusively (no school, no other jobs) on this project for the duration of the project?')
     team_non_exclusive_members = models.TextField(verbose_name="For the people on your team who can't/don't want to commit full-time: Why not? What level of commitment are you willing to make?")
     team_prior_commitments = models.TextField(verbose_name='Do any of you have commitments in the future (e.g. finishing college, going to grad school), and if so what?')
