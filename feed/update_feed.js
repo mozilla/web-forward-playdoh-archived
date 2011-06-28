@@ -45,7 +45,7 @@ http.get({
           feed.tweets.push({
             title: rs[i].text,
             posted: rs[i].created_at,
-            link: "http://twitter.com/#!/"+rs[i].from_user+"/status/"+rs[i].id
+            link: "http://twitter.com/#!/"+rs[i].from_user+"/status/"+rs[i].id_str
           });
         }
         allDone();
