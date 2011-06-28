@@ -173,6 +173,7 @@ MINIFY_BUNDLES = {
             'js/libs/jquery.scrollTo-1.4.2.min.js',
             'js/libs/fancybox/jquery.easing-1.3.pack.js',
             'js/libs/fancybox/jquery.fancybox-1.3.4.js',
+            'js/libs/webtrends.js',
             'js/apply.js',
         ),
     }
