@@ -5,229 +5,271 @@
 {% block body_id %}index{% endblock %}
 
 {% block content %}
-<section id="what" class="cf">
-  <div id="essentials" class="row">
+<div id="essentials" class="row">
     <div class="c5"></div>
     <div class="c1"><a href="http://mozilla.com"><img class="tab" src="{{ MEDIA_URL }}img/tab.png"></a></div>
-  </div>
-  <div class="row">
-    <div class="c4 center">
-      <h2>What is Web FWD?</h2>
-      <p class="serif"><span class="yellow">Web FWD</span> (Forward) is the new Innovation Accelerator from Mozilla. It's a chance for us to work with product builders, and for you to work with us. It's about creating open solutions that push the Web forward, together. Interested? <a class="continue">Keep reading.</a></p>
+</div>
+
+<section id="what" class="cf">
+    <div class="row">
+        <div class="c2">
+            <a id="movie" href="http://www.youtube.com/watch?v=otunbDTGnUI"></a>
+        </div>
+        <div class="c4">
+            <h2>What is Web FWD?</h2>
+            <p class="serif"><span class="yellow">Web FWD</span> (Forward) is the new Innovation Accelerator from <a href="http://mozilla.com/">Mozilla</a>. It's a chance for us to work with you, product builders, and for you to work with us and our brilliant <a href="mentorship.html">mentors</a>. It's about creating open solutions that push the Web forward, together. Interested? <a class="continue">Keep reading.</a></p>
+        </div>
     </div>
-  </div>
 </section>
 
 <section id="spacer" class="cf">
-  <!-- spacer section to act as background for fixed nav -->
+    <!-- spacer section to act as background for fixed nav -->
 </section>
 
 <nav id="primaryNav" class="cf">
-  <div class="c2">
-    <h1 class="light">Web Forward</h1>
-  </div>
-  <ul class="c4">
-    <li><a href="#what">What</a></li>
-    <li><a href="#how">How</a></li>
-    <li><a href="#who">Who</a></li>
-    <li><a href="#when">When</a></li>
-    <li><a href="#why">Why</a></li>
-    <li><a class="apply" href="{{ url('apply') }}">Apply</a></li>
-  </ul>
+    <div class="c2 logo">
+        <img src="{{ MEDIA_URL }}img/fwd_logo.png" title="Web FWD" alt="Web FWD">
+    </div>
+    <ul class="c4">
+        <li><a href="#what">What</a></li>
+        <li><a href="#how">How</a></li>
+        <li><a href="#who">Who</a></li>
+        <li><a href="#when">When</a></li>
+        <li><a href="#why">Why</a></li>
+        <!--
+        <li><a href="#buzz">Buzz</a></li>
+        -->
+        <li>|</li>
+        <li><a class="FAQ" href="{{ url('faq') }}">FAQ</a></li>
+        <li><a class="mentors" href="{{ url('mentorship') }}">Mentors</a></li>
+        <li><a class="apply" href="{{ url('apply') }}">Apply</a></li>
+    </ul>
 </nav>
 
 <section id="splash" class="cf">
 </section>
 
 <section id="how" class="cf">
-  <div class="row">
-    <div class="c6">
-      <h2>How?</h2>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="c2">
-      <p class="serif">We'll bring teams with bold product visions and solutions for the Open Web into Mozilla's global MozSpaces for 4 weeks at a time, giving them access to our people, tools and resources.</p>
+    <div class="row">
+        <div class="c6">
+            <h2>How?</h2>
+        </div>
     </div>
     
-    <div class="c2">
-      <p class="serif">During the 4-week program you will work alongside the Mozilla crew. You'll receive mentorship and advice from some of the brightest people around, allowing you to focus on what you do best: <em>building</em>.</p>
+    <div class="row">
+        <div class="c2">
+            <p class="serif">We'll bring teams with bold product visions for the open Web into one of our global offices for 4 weeks at a time and give you access to our tools and resources.</p>
+        </div>
+        
+        <div class="c2">
+            <p class="serif">You'll work alongside the Mozilla crew and receive <a href="mentorship.html">mentorship</a> and advice from some of the brightest people around the Web, so you can focus on what you do best: <em>building</em>.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="c6">
-      <img src="{{ MEDIA_URL }}img/map.png" >
-      <span class="caption serif"><em>When you're done, that initial gleam of an idea will be a product ready to go out into the world.</em></span>
+    <div class="row">
+        <div class="c6">
+            <img src="{{ MEDIA_URL }}img/map.png">
+            <span class="caption serif"><em>When you're done, that initial gleam of an idea will be a product ready to go out into the world.</em></span>
+        </div>
     </div>
-  </div>
-  
-  <div id="listWrap" class="row">      
-    <div class="c3">
-      <h3>What we offer</h3>
-      <ul id="offer" class="serif">
-        <li><span class="bright">Food &amp; housing</span> during the program
-        <li>The opportunity to work alongside the <span class="bright">Mozilla crew</span>
-        <li>Help with <span class="bright">IT infrastructure</span> 
-        <li>Access to key <span class="bright">Mozilla personnel</span>
-        <li>Regular mentorship sessions with <span class="bright">leading experts</span>
-        <li><span class="bright">Coaching</span> on how to pitch your product
-        <li><span class="bright">Introductions</span> to interesting people
-        <li>The chance to <span class="bright">co-host events</span>
-        <li>And, of course, lots of <span class="bright">fun &amp; awesomeness!</span>
-      </ul>
-    </div>
-    <div class="c3">
-      <h3>What we look for</h3>
-      <ul id="characteristics" class="serif">
-        <li>Your product fits into one of our <span class="bright">interest areas</span>
-        <li>Your product is developed with the <span class="bright">traits we care about</span>
-        <li>You have at least the <span class="bright">kernel of a product</span>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="c4">
-      <h3>Interest Areas</h3>
-    </div>
-    <div class="c2">
-      <h3>Traits</h3>
-    </div>
-  </div>
-
-  <ul id="interests" class="cf w4">
-    <li class="c2">
-      <div class="icon">
-        <img src="{{ MEDIA_URL }}img/icon_identity.png">
-      </div>
-      <div class="info">
-        <h4>Identity</h4>
-        <p class="serif">Put me into control of how I am represented on the Web</p>
-      </div>
-    </li>
-    <li class="c2">
-      <div class="icon">
-        <img src="{{ MEDIA_URL }}img/icon_social.png">
-      </div>
-      <div class="info">
-        <h4>Social</h4>
-        <p class="serif">Connect me easily with people, communities, and content</p>
-      </div>
-    </li>
-    <li class="c2">
-      <div class="icon">
-        <img src="{{ MEDIA_URL }}img/icon_data.png">
-      </div>
-      <div class="info">
-        <h4>User Mediated Data</h4>
-        <p class="serif">My data is mine, allow me to broker data exchanges under my terms</p>
-      </div>
-    </li>
-    <li class="c2">
-      <div class="icon">
-        <img src="{{ MEDIA_URL }}img/icon_edit.png">
-      </div>
-      <div class="info">
-        <h4>Personalization</h4>
-        <p class="serif">Make the Web work for me</p>
-      </div>
-    </li>
-    <li class="c2">
-      <div class="icon">
-        <img src="{{ MEDIA_URL }}img/icon_context.png">
-      </div>
-      <div class="info">
-        <h4>Contextual Integrity</h4>
-        <p class="serif">I live my life in different contexts, preserve this on the Web</p>
-      </div>
-    </li>
-    <li class="c2">
-      <div class="icon">
-        <img src="{{ MEDIA_URL }}img/icon_hack.png">
-      </div>
-      <div class="info">
-        <h4>Read-Write Ability</h4>
-        <p class="serif">Make and keep the Web hackable</p>
-      </div>
-    </li>
-    <li class="c2">
-      <div class="icon">
-        <img src="{{ MEDIA_URL }}img/icon_laptop.png">
-      </div>
-      <div class="info">
-        <h4>Core</h4>
-        <p class="serif">Ensure that foundational technologies of the Web are competitive and foster innovation</p>
-      </div>
-    </li>
-  </ul>
-  
-  <ul id="traits" class="cf w2">
-    <li class="c2"><p>Your source code is <strong>tri-licensed</strong> under the MPL, GPL and LPGL Open Source licenses</p>
-    <li class="c2"><p>You use existing <strong>open standards</strong> where they exist and push for standards where they are missing</p>
-    <li class="c2"><p>Your product is essentially <strong>"of the Web"</strong> - <em>decentralized</em>, <em>interoperable</em>, <em>privacy &amp; people centric</em> and <em>secure</em></p>
-  </ul>
     
+    <div id="listWrap" class="row">            
+        <div class="c3">
+            <h3>What We Offer</h3>
+            <ul id="offer" class="serif">
+                <li><span class="bright">Food &amp; housing</span> during the program
+                <li>The opportunity to work alongside the <span class="bright">Mozilla crew</span>
+                <li>Help with <span class="bright">IT infrastructure</span> 
+                <li>Access to key <span class="bright">Mozilla personnel</span>
+                <li>Regular mentorship sessions with <span class="bright">leading experts</span>
+                <li><span class="bright">Coaching</span> on how to pitch your product
+                <li><span class="bright">Introductions</span> to interesting people
+                <li>The chance to <span class="bright">co-host events</span>
+                <li>And, of course, lots of <span class="bright">fun &amp; awesomeness!</span>
+            </ul>
+        </div>
+        <div class="c3">
+            <h3>What We Look For</h3>
+            <ul id="characteristics" class="serif">
+                <li>Your product fits into the <span class="bright">interest areas</span>
+                <li>Your product is developed with <span class="bright">open Web traits</span>
+                <li>You have at least the <span class="bright">kernel of a product</span>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="c4">
+            <h3>Interest Areas</h3>
+            <span class="caption serif">
+                <em>Think mobile first</em>
+            </span>
+        </div>
+        <div class="c2">
+            <h3>Traits</h3>
+        </div>
+    </div>
+
+    <ul id="interests" class="cf w4">
+        <li class="c2">
+            <div class="icon">
+                <img src="{{ MEDIA_URL }}img/icon_identity.png">
+            </div>
+            <div class="info">
+                <h4>Identity</h4>
+                <p class="serif">Put me in control of how I'm represented on the Web</p>
+            </div>
+        </li>
+        <li class="c2">
+            <div class="icon">
+                <img src="{{ MEDIA_URL }}img/icon_social.png">
+            </div>
+            <div class="info">
+                <h4>Social</h4>
+                <p class="serif">Connect me easily with people, communities and content</p>
+            </div>
+        </li>
+        <li class="c2">
+            <div class="icon">
+                <img src="{{ MEDIA_URL }}img/icon_data.png">
+            </div>
+            <div class="info">
+                <h4>User Mediated Data</h4>
+                <p class="serif">My data is mine; allow me to broker data exchanges on my terms</p>
+            </div>
+        </li>
+        <li class="c2">
+            <div class="icon">
+                <img src="{{ MEDIA_URL }}img/icon_edit.png">
+            </div>
+            <div class="info">
+                <h4>Personalization</h4>
+                <p class="serif">Make the Web work for me</p>
+            </div>
+        </li>
+        <li class="c2">
+            <div class="icon">
+                <img src="{{ MEDIA_URL }}img/icon_context.png">
+            </div>
+            <div class="info">
+                <h4>Contextual Integrity</h4>
+                <p class="serif">I live my life in different contexts; preserve this on the Web</p>
+            </div>
+        </li>
+        <li class="c2">
+            <div class="icon">
+                <img src="{{ MEDIA_URL }}img/icon_hack.png">
+            </div>
+            <div class="info">
+                <h4>Read-Write Ability</h4>
+                <p class="serif">Make and keep the Web hackable</p>
+            </div>
+        </li>
+        <li class="c2">
+            <div class="icon">
+                <img src="{{ MEDIA_URL }}img/icon_laptop.png">
+            </div>
+            <div class="info">
+                <h4>Core</h4>
+                <p class="serif">Ensure that the foundational technologies of the Web are competitive and foster innovation</p>
+            </div>
+        </li>
+    </ul>
+    
+    <ul id="traits" class="cf w2">
+        <li class="c2"><p>Your source code is <strong>tri-licensed</strong> under the MPL, GPL and LPGL Open Source licenses</p>
+        <li class="c2"><p>You use existing <strong>open standards</strong> where they exist and push for standards where they are missing</p>
+        <li class="c2"><p>Your product is essentially <strong>"of the Web"</strong> - <em>decentralized</em>, <em>interoperable</em>, <em>secure</em> and <em>privacy- &amp; people-centric</em></p>
+    </ul>
+        
 </section>
 
 <hr>
 
 <section id="who" class="cf">
-  <div class="row">
-    <div class="c2">
-      <h2>Who?</h2>
+    <div class="row">
+        <div class="c2">
+            <h2>Who?</h2>
+        </div>
+        <div class="c2">
+            <p class="serif"><span class="yellow">Web FWD</span> is open to anyone with the building blocks of a great product: hackers, builders and entrepreneurs with bold ideas for a better Web.</p>
+        </div>
+        <div class="c2">
+            <p class="serif">If you and your buddies think you have what it takes to build an amazing Web app, Mobile, or Social product, <a href="apply.html">apply now</a>!</p>
+        </div>
     </div>
-    <div class="c2">
-      <p class="serif"><span class="yellow">Web FWD</span> is open to anyone with the building blocks for a great product. Hackers, Builders &amp; Entrepreneurs with bold ideas for how to make a better Web.</p>
-    </div>
-    <div class="c2">
-      <p class="serif">If you and your buddies think you have what it takes to build an amazing product, apply now!</p>
-    </div>
-  </div>
 </section>
 
 <hr>
 
 <section id="when" class="cf">
-  <div class="row">
-    <div class="c2">
-      <h2>When?</h2>
+    <div class="row">
+        <div class="c2">
+            <h2>When?</h2>
+        </div>
+        <div class="c2">
+            <p class="serif">We're different.</p> 
+            <p class="serif">Since our admissions are rolling, you can apply at any time. We're opening the doors of our San Francisco office on August 1, 2011.</p>
+        </div>
     </div>
-    <div class="c2">
-      <p class="serif">We're different.</p> 
-      <p class="serif">You can apply at any time and admissions are rolling. We will open our doors in our SF MozSpaces on August 1, 2011.</p>
-    </div>
-  </div>
 </section>
 
 <hr>
 
 <section id="why" class="cf">
-  <div class="row">
-    <div class="c2">
-      <h2>Why?</h2>
+    <div class="row">
+        <div class="c2">
+            <h2>Why?</h2>
+        </div>
+        <div class="c2">
+            <p class="serif">Mozilla's motivation for <span class="yellow">Web FWD</span> is to bring even more innovation to the open Web. For you, this program provides:</p>
+            <ul>
+                <li>
+                    <h4>Focus to Build</h4>
+                    <p class="serif">Space, time, infrastructure, tools, food, shelter&mdash;everything you need to get to a minimum viable product</p>
+                </li>
+                <li>
+                    <h4>Learning &amp; Growth</h4>
+                    <p class="serif"><a href="mentorship.html">Mentorship</a> and advice from some of the brightest people around</p>
+                </li>
+                <li>
+                    <h4>Mozilla</h4>
+                    <p class="serif">Direct access to Mozilla and our crew in one of the MozSpaces and tons of fun!</p>
+                </li>
+            </ul>
+        </div>
+        <div class="c2">
+            <img src="{{ MEDIA_URL }}img/work.png">
+        </div>
     </div>
-    <div class="c2">
-      <p class="serif">Mozilla's motivation for doing <span class="yellow">Web FWD</span> is to bring even more innovation to the open Web. And for you, this program provides:</p>
-      <ul>
-        <li>
-          <h4>Focus to Build</h4>
-          <p class="serif">Space, time, infrastructure, tools, food, shelter-everything to get to a minimum viable product</p>
-        </li>
-        <li>
-          <h4>Learn &amp; Grow</h4>
-          <p class="serif">Receive mentorship and advice from some of the brightest people around</p>
-        </li>
-        <li>
-          <h4>Mozilla</h4>
-          <p class="serif">Work alongside the Mozilla crew in one of the MozSpaces &amp; get direct access to Mozilla</p>
-        </li>
-      </ul>
-    </div>
-    <div class="c2">
-      <img src="{{ MEDIA_URL }}img/work.png">
-    </div>
-  </div>
 </section>
+
+<!--
+<hr>
+
+<section id="buzz" class="cf">
+    <div class="row">
+        <div class="c6">
+            <h2>Buzz</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="c2">
+            <h3>Tweets</h3>
+            <ul id="tweets" class="serif">
+            </ul>
+        </div>
+        <div class="c2">
+            <h3>Blog Posts</h3>
+            <ul id="blog" class="serif">
+            </ul>
+        </div>
+        <div class="c2">
+            <h3>Events</h3>
+            <ul id="events" class="serif">
+            </ul>
+        </div>
+    </div>
+</section>
+-->
 {% endblock content %}

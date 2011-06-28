@@ -1,6 +1,56 @@
+/*
+ * JavaScript Pretty Date
+ * Copyright (c) 2008 John Resig (jquery.com)
+ * Licensed under the MIT license.
+ */
+
+// load the buzz feed
+function updateBuzz() {
+    // take a javascript time and convert it into a relative time
+    function toRelDate(date) {
+        // credit?  John Resig of course: http://ejohn.org/blog/javascript-pretty-date/
+        var diff = (((new Date()).getTime() - new Date(date).getTime()) / 1000),
+        day_diff = day_diff = Math.floor(diff / 86400);
+
+	      var txtDiff = day_diff == 0 && (
+			      diff < 60 && "just now" ||
+			          diff < 120 && "1 minute ago" ||
+			          diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+			          diff < 7200 && "1 hour ago" ||
+			          diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+		        day_diff == 1 && "Yesterday" ||
+		        day_diff < 7 && day_diff + " days ago" ||
+		        day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago" ||
+		        Math.ceil( day_diff / 30 ) + " months ago";
+
+        return $("<div>").text(txtDiff).addClass("posted");
+    }
+
+    $.get('feed/latest.json', function(feed) {
+        function createEntry(obj) {
+            var n = $("<li>"), c = n;
+            c.text(obj.title);
+            if (obj.link && obj.link.length) {
+                c = $("<a>").attr('href', obj.link).appendTo(n);
+            }
+            if (obj.posted) c.append(toRelDate(obj.posted));
+            if (obj.when) c.append($("<div>").text(obj.when).addClass("date"));
+            return n;
+        }
+
+        for (var i = 0; i < feed.tweets.length; i++) {
+            $("#tweets").append(createEntry(feed.tweets[i]));
+        }
+        for (var i = 0; i < feed.posts.length; i++) {
+            $("#blog").append(createEntry(feed.posts[i]));
+        }
+        for (var i = 0; i < feed.events.length; i++) {
+            $("#events").append(createEntry(feed.events[i]));
+        }
+    }, "json");
+}
+
 $(document).ready(function($) {
-    
-    $('body').removeClass('no-js').addClass('js');
     
     //size what/buzz div
     $(window).bind('load resize', function() {
@@ -15,47 +65,38 @@ $(document).ready(function($) {
             return (t === d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
         }
     });
+    
+    //fancy box
+    $("#movie").click(function() {
+        $.fancybox({
+            'padding'             : 0,
+            'overlayShow'         : false,
+            'autoScale'           : false,
+            'transitionIn'        : 'none',
+            'transitionOut'       : 'none',
+            'title'               : this.title,
+            'width'               : 640,
+            'height'              : 388,
+            'href'                : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+            'type'                : 'swf',    // <--add a comma here
+            'swf'                 : {'allowfullscreen':'true'} // <-- flashvars here
+            });
+            return false;
+    }); 
 
     //scroll to content
     
-    $('#primaryNav h1, a.continue').click(function() {
+    $('#primaryNav img, a.continue').click(function() {
         var wh = $(window).height();
         $('body').scrollTo({top:(wh-81), left:'0px'}, 500, {easing: 'easeOutExpo'});
     });
-    
+
     $('#primaryNav a').live('click', function() {
         $('html,body').scrollTo($(this).attr('href'), 500,
             {offset: -79, easing: 'easeOutExpo'});
 
-
         return false; 
     });
-
-/*
-    $('a.what').click(function() {
-        $('body').scrollTo('#what', 500, {easing: 'easeOutExpo'});
-    });
-    
-    $('a.how').click(function() {
-        $('body').scrollTo('#how', 500, {offset: -79, easing: 'easeOutExpo'});
-    });
-    
-    $('a.who').click(function() {
-        $('body').scrollTo('#who', 500, {offset: -79, easing: 'easeOutExpo'});
-    });
-    
-    $('a.when').click(function() {
-        $('body').scrollTo('#when', 500, {offset: -79, easing: 'easeOutExpo'});
-    });
-    
-    $('a.why').click(function() {
-        $('body').scrollTo('#why', 500, {offset: -79, easing: 'easeOutExpo'});
-    });
-    
-    $('a.buzz').click(function() {
-        $('body').scrollTo('#buzz', 500, {offset: -79, easing: 'easeOutExpo'});
-    });
-*/
 
     // Sticky header on index page
     if ($('#page-index').length) {
@@ -86,11 +127,9 @@ $(document).ready(function($) {
         });
     }
     
-    //keyboard shortcuts
-    $(document.documentElement).keyup(function (event) {
-        if (event.keyCode == 71) {
-            $('#grid').fadeToggle(100); // G toggles grid
-        }
-    });
+    // now load the buzz feed, which has a much less aggressive caching
+    // to give you that realtime feel, hence stored in a separate dynamically
+    // updated json file.
+    // updateBuzz();
     
 });

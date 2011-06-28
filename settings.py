@@ -163,6 +163,7 @@ def JINJA_CONFIG():
 MINIFY_BUNDLES = {
     'css': {
         'apply_css': (
+            'js/libs/fancybox/jquery.fancybox-1.3.4.css',
             'css/apply.css',
         ),
     },
@@ -170,6 +171,8 @@ MINIFY_BUNDLES = {
         'apply_js': (
             'js/libs/jquery-1.6.1.min.js',
             'js/libs/jquery.scrollTo-1.4.2.min.js',
+            'js/libs/fancybox/jquery.easing-1.3.pack.js',
+            'js/libs/fancybox/jquery.fancybox-1.3.4.js',
             'js/apply.js',
         ),
     }

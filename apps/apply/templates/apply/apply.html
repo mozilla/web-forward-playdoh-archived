@@ -19,10 +19,21 @@
 
 <nav id="primaryNav" class="cf">
     <div class="c2">
-        <h1 class="light">Web Forward Application</h1>
+        <a href="{{ url('index') }}"><img src="{{ MEDIA_URL }}img/fwd_logo.png" title="Web FWD" alt="Web FWD"></a>
     </div>
     <ul class="c4">
-        <li><a href="{{ url('index') }}">Back to homepage</a></li>
+        <li><a href="{{ url('index') }}#what" class="what">What</a></li>
+        <li><a href="{{ url('index') }}#how" class="how">How</a></li>
+        <li><a href="{{ url('index') }}#who" class="who">Who</a></li>
+        <li><a href="{{ url('index') }}#when" class="when">When</a></li>
+        <li><a href="{{ url('index') }}#why" class="why">Why</a></li>
+        <!--
+        <li><a href="{{ url('index') }}#buzz" class="buzz">Buzz</a></li>
+        -->
+        <li>|</li>
+        <li><a class="FAQ" href="{{ url('faq') }}">FAQ</a></li>
+        <li><a class="mentors" href="{{ url('mentorship') }}">Mentors</a></li>
+        <li><a class="apply selected">Apply</a></li>
     </ul>
 </nav>  
 
@@ -41,7 +52,23 @@
 	
   {% for f in form %}
     <div id="{{ f.name }}-container" class="field">
+    {% if f.name == 'accept_terms' %}
+      <label for="id_{{ f.name }}">
+          Please confirm that you have read, understood and agree to our
+          <a href="http://www.mozilla.com/en-US/about/legal.html">
+            Terms of Service
+          </a>
+      </label>
+    {% elif f.name == 'accept_privacy' %}
+      <label for="id_{{ f.name }}">
+          Please confirm that you have also read, understood and agree to our
+          <a href="http://www.mozilla.com/en-US/privacy-policy.html">
+            Privacy Policy
+          </a>
+      </label>
+    {% else %}
       {{ f.label_tag() }}
+    {% endif %}
       {{ form.errors[f.name] }}
       {{ f }}
     </div>

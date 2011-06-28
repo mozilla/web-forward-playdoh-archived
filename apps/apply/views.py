@@ -27,11 +27,20 @@ def apply(request):
 
     return jingo.render(request, 'apply/apply.html', {'form': form})
 
+def faq(request):
+    """FAQ page for Web Forward"""
+    return jingo.render(request, 'apply/faq.html')
+
 def index(request):
     """
     Home page for Web Forward; currently a static HTML page with info about
-    Web Forward and a link to the application form."""
+    Web Forward and a link to the application form.
+    """
     return jingo.render(request, 'apply/index.html')
+
+def mentorship(request):
+    """Mentorship page for Web Forward"""
+    return jingo.render(request, 'apply/mentorship.html')
 
 def thanks(request):
     """Thanks page; displayed after a successful application submission."""

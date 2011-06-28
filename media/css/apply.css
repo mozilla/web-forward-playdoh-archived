@@ -12,6 +12,8 @@
 body {
     font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
     background-color: #fffbed;
+    background-image: url('../img/stripes.png');
+    background-repeat: repeat-x;
     font-size: 12px;
     line-height: 21px;
     color: #222;
@@ -24,6 +26,7 @@ body {
 }
 
 body.white {
+    background-image: none;
     background-color: #fafafa;
 }
 
@@ -39,6 +42,16 @@ body.white #primaryNav {
 
 body.white #what {
     background-image: -moz-radial-gradient(center center, #000000 0%, #fffbed 70%);
+}
+
+a {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    color: maroon;
 }
 
 /* html5 junk */
@@ -79,9 +92,10 @@ h2 {
 }
 
 hr {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-image: url('../img/hr.png');
+    background-repeat: repeat-x;
     border: none;
-    height: 1px;
+    height: 5px;
     margin: 0 10px;
 }
 
@@ -123,6 +137,7 @@ img {
     margin: 0 auto;
     border-right: 1px solid transparent;
     border-left: 1px solid transparent;
+    position: relative;
     -webkit-transition: all 0.4s ease-in;
     -moz-transition: all 0.4s ease-in;
     -o-transition: all 0.4s ease-in;
@@ -246,11 +261,16 @@ section {
     transition: background-color 0.4s ease-in;
 }
 
-#primaryNav h1 {
+#primaryNav img {
+    margin: 0;
     cursor: pointer;
 }
 
-#primaryNav .c2, #primaryNav .c4 {
+#primaryNav .c2 {
+    padding: 23px 0 21px;
+}
+
+#primaryNav .c4 {
     padding: 40px 0 21px;
 }
 
@@ -289,12 +309,32 @@ section {
     background-color: maroon;
 }
 
+#primaryNav .selected {
+    font-weight: bold;
+    color: red;
+}
+
 /* content */
 #tab {
     padding: 0;
 }
 
 #tab img {
+    float: right;
+}
+
+#essentials {
+    position: absolute;
+    width: 960px;
+    top: 0;
+    z-index: 1;
+}
+
+#essentials img.fx {
+    margin: 10px 0 0 0;
+}
+
+#essentials img.tab {
     float: right;
 }
 
@@ -311,31 +351,8 @@ section {
     transition: background-image 0.4s ease-in;
 }
 
-#what #essentials {
-    position: absolute;
-    width: 960px;
-    top: 2px;
-}
-
-#what #essentials img.fx {
-    margin: 10px 0 0 0;
-}
-
-#what #essentials img.tab {
-    float: right;
-}
-
 #what h2 {
     margin: 0 0 14px 0;
-}
-
-#what a {
-    color: red;
-    cursor: pointer;
-}
-
-#what a:hover {
-    color: maroon;
 }
 
 #what .row {
@@ -344,6 +361,19 @@ section {
 
 #what .center {
     margin: 0 170px;
+}
+
+#what #movie {
+    width: 300px;
+    height: 160px;
+    display: block;
+    margin-top: -22px;
+    background-image: url('../img/movie.png');
+    background-position: top left;
+}
+
+#what #movie:hover {
+    background-position: bottom left;
 }
 
 #splash {
@@ -507,8 +537,16 @@ section {
 }
 
 #buzz ul li {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.75);
     padding: 10px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#buzz ul li .posted, #buzz ul li .date {
+    color: #74726a;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
 #buzz ul li:last-child {
@@ -540,25 +578,8 @@ section {
     border: none;
 }
 
-#form .field {
-    padding: 15px 39px;
-}
-
-/** Specific form elements */
-#first_name-container, #last_name-container {
-    float: left;
-    padding-left: 0;
-    padding-right: 0;
-    width: 50%;
-}
-
-.errorlist li {
-    color: red;
-    list-style: none;
-}
-
-#email-container {
-        clear: both;
+#form .c4, #form .c2 {
+    padding: 20px 0;
 }
 
 #form label {
@@ -637,6 +658,7 @@ section {
     -moz-box-shadow: 0 0 0 1px #76c2ff inset;
     -o-box-shadow: 0 0 0 1px #76c2ff inset;
     box-shadow: 0 0 0 1px #76c2ff inset;
+    margin: 10px 40px 20px 0;
 }
 
 #form #submit:active {
@@ -653,12 +675,133 @@ section {
     box-shadow: 0 0 5px #003763 inset;
 }
 
+#FAQ {
+    width: 640px;
+    margin: 0 auto;
+}
+
+#FAQ h1 {
+    margin: 0 10px 21px;
+}
+
+#FAQ h2 {
+    margin: 40px 10px 0;
+}
+
+#FAQ li {
+    margin: 40px 10px;
+}
+
+#FAQ .Q {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 0 14px;
+}
+
+#FAQ .A {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+#FAQ .A ul {
+    margin: 14px 0;
+}
+
+#FAQ .A li {
+    list-style-type: disc;
+    margin: 0 0 14px 14px;
+}
+
+#aboutMentorship h1, #notes h1 {
+    margin: 0 0 21px 0;
+}
+
+#mentors li {
+    margin-bottom: 40px;
+}
+
+#mentors .headshot {
+    height: 160px;
+    width: 140px;
+    display: block;
+    float: left;
+    background-color: #222;
+}
+
+#mentors .mentorInfo {
+    float: left;
+    width: 320px;
+    min-height: 164px;
+    padding: 10px 0 0 20px;
+    text-shadow: 1px 1px 0 #fff;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+#mentors .name {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222;
+}
+
+#mentors .title {
+    display: block;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+#mentors p {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+#mentors h2, #family h2 {
+    margin: 0 0 40px 0;
+}
+
 footer {
     width: 962px;
     margin-left: -1px;
     border-top: 3px solid rgba(0, 0, 0, 0.1);
     background-color: #fafafa;
     padding: 40px 1px;
+}
+
+footer .c4 {
+    text-align: right;
+}
+
+footer .c4 ul {
+    list-style-type: none;
+}
+
+footer .c4 li {
+    margin: 0 0 0 10px;
+    display: inline-block;
+}
+
+/* Specific form elements */
+#form .field {
+    padding: 15px 39px;
+}
+
+/** Specific form elements */
+#first_name-container, #last_name-container {
+    float: left;
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%;
+}
+
+.errorlist li {
+    color: red;
+    list-style: none;
+}
+
+#email-container {
+    clear: both;
 }
 
 /* clearfix */
@@ -678,3 +821,4 @@ html[xmlns] .cf {
 * html .cf {
     height: 1%;
 }
+

@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block page_title %}Web Forward — Mentorship{% endblock %}
+
+{% block body_id %}mentorship{% endblock %}
+{% block body_classes %}white{% endblock %}
+
+{% block content %}
+<section id="tab" class="cf">
+    <div id="essentials" class="row">
+        <div class="c5"></div>
+        <div class="c1"><a href="http://mozilla.com"><img class="tab" src="{{ MEDIA_URL }}img/tab.png"></a></div>
+    </div>
+</section>
+
+<nav id="primaryNav" class="cf">
+    <div class="c2">
+        <a href="{{ url('index') }}"><img src="{{ MEDIA_URL }}img/fwd_logo.png" title="Web FWD" alt="Web FWD"></a>
+    </div>
+    <ul class="c4">
+        <li><a href="{{ url('index') }}#what" class="what">What</a></li>
+        <li><a href="{{ url('index') }}#how" class="how">How</a></li>
+        <li><a href="{{ url('index') }}#who" class="who">Who</a></li>
+        <li><a href="{{ url('index') }}#when" class="when">When</a></li>
+        <li><a href="{{ url('index') }}#why" class="why">Why</a></li>
+        <!--
+        <li><a href="{{ url('index') }}#buzz" class="buzz">Buzz</a></li>
+        -->
+        <li>|</li>
+        <li><a class="FAQ" href="{{ url('faq') }}">FAQ</a></li>
+        <li class="selected">Mentors</li>
+        <li><a class="apply" href="{{ url('apply') }}">Apply</a></li>
+    </ul>
+</nav>  
+
+<section id="aboutMentorship" class="cf">
+    <div class="c1"></div>
+    <div class="c4">
+        <h1 class="light">Web FWD Mentors</h1>
+        <p class="serif">We've carefully chosen an <em>awesome</em> and <em>diverse</em> panel of mentors to provide practical advice as you turn your ideas into products that will push the Web forward. These are some of the most brilliant minds on the Web today, and they're here for you. Teams will spend time with mentors each week during Web FWD. We will continue to add mentors throughout the program, so check back often for new additions.</p>
+    </div>
+</section>
+
+<hr>
+
+<section id="mentors" class="cf">
+    <div class="c6">
+        <h2>Mentors</h2>
+    </div>
+    <ul class="cf">
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_mbaker.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Mitchell Baker</span>
+              <span class="title serif">Chairwoman, Mozilla Foundation</span>
+              <p class="aboutMentor">Mitchell is responsible for setting the direction and scope of the Mozilla Foundation and its activities. She leads a worldwide organization of employees and volunteers committed to an open, innovative Web and the infinite possibilities it presents.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_gcamp.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Garrett Camp</span>
+              <span class="title serif">Founder &amp; CEO, StumbleUpon</span>
+              <p class="aboutMentor">Garrett has guided StumbleUpon's development since 2001, from inception to more than 15 million registered users. StumbleUpon is now the largest personalized content discovery engine on the web.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_mdemiroz.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Marco DeMiroz</span>
+              <span class="title serif">Venture Investor</span>
+              <p class="aboutMentor">Marco loves working with those unique entrepreneurs who want to change the world!</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_kdoherty.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Kyle Doherty</span>
+              <span class="title serif">Senior Associate, Morgenthaler Ventures</span>
+              <p class="aboutMentor">Kyle primarily focuses on investments in the consumer internet sector on the Information Technology team. Previously he was a Research Associate at Morgan Stanley.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_jfinette.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Jane Finette</span>
+              <span class="title serif">Director of User Engagement, Mozilla Firefox</span>
+              <p class="aboutMentor">Jane leads global user engagement and acquisition for Mozilla Firefox. Jane held various positions at eBay, Sotheby's and Channel Advisor, crafting her art of marketing over the past 15 years.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_pfinette.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Pascal Finette</span>
+              <span class="title serif">Director Mozilla Web FWD</span>
+              <p class="aboutMentor">Entrepreneur (couple of times), big company dude, consultant to startups, venture capitalist and finally seen the light: Director @Mozilla.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_kfox.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Kevin Fox</span>
+              <p class="aboutMentor">Kevin led the design of Google's Gmail, Calendar and Reader, Facebook's Games dashboard, and Yahoo! Messenger, served as the principal designer for Mozilla Labs and currently advises startups. </p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_bgalbraith.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Ben Galbraith</span>
+              <p class="aboutMentor">Ben, co-founder of Ajaxian.com, headed Developer Tools at Mozilla. He wrote his first code at the age of six, started his first business at ten, sold three companies, and has held CEO, CIO, and CTO positions in various industries. </p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_mgoines.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Mark Goines</span>
+              <span class="title serif">Partner, Morgenthaler Ventures</span>
+              <p class="aboutMentor">Mark has an extensive track record of working with high growth companies as an entrepreneur, executive and angel investor. Exits from his angel investments include Mint, Baby Center, PayCycle and Nolo.com.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_bkeighran.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Ben Keighran</span>
+              <span class="title serif">Internet Entrepreneur, CEO &amp; Co-Founder of Chomp</span>
+              <p class="aboutMentor">Previously lead advisor for mobile products at Aardvark until acquired by Google. Nominated by BusinessWeek as one of America's Top Entrepreneurs under the age of 25 for his success with Bluepulse.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_gkovacs.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Gary Kovacs</span>
+              <span class="title serif">CEO, Mozilla Corporation</span>
+              <p class="aboutMentor">Gary is leading the overall direction of the organization and the Firefox Web browser. Prior to joining Mozilla, Gary held senior leadership roles at Sybase, Adobe and Macromedia.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_jlilly.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">John Lilly</span>
+              <span class="title serif">Partner, Greylock Partners </span>
+              <p class="aboutMentor">Currently a partner at Greylock Partners that invested in Facebook, LinkedIn and Pandora. Previously CEO of Mozilla, and involved in numerous for-profit and non-profit technology startups.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_pmorle.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Phil Morle</span>
+              <span class="title serif">Founder &amp; Lean Startup CTO, Pollenizer</span>
+              <p class="aboutMentor">I am a practitioner of a lean startup way of working and passionate (addicted?) to starting web businesses. I learned my trade as the CTO of Kazaa for 5 years and I am a founder member of the Data Portability initiative.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_nnguyen.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Nick Nguyen</span>
+              <p class="aboutMentor">Nick is currently a co-founder at Tasty Labs. In previous lives, he was a product manager on Yahoo! Answers and del.icio.us, as well as the Director of Add-ons at Mozilla.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_inovick.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Itamar Novick</span>
+              <span class="title serif">Associate, Morgenthaler Ventures</span>
+              <p class="aboutMentor">Itamar focuses on early-stage investments in the mobile and consumer-facing Web space. Previously, Sr. Director of Product Management at Gigya, product development lead in Enelita and co-founder of two start-ups.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_jresig.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">John Resig</span>
+              <p class="aboutMentor">Dean of Open Source and the Head of JavaScript Development, Khan Academy. Also the author of the book Pro JavaScript Techniques, the creator and lead developer of the jQuery JavaScript library.</p>
+          </div>
+      </li>
+      <li class="c3 mentor">
+          <div class="headshot"><img src="{{ MEDIA_URL }}img/headshot_mshapiro.jpg"></div>
+          <div class="mentorInfo">
+              <span class="name">Melissa Shapiro</span>
+              <span class="title serif">Director of Public Relations, Mozilla</span>
+              <p class="aboutMentor">Melissa leads a global team of communicators who help Mozilla's stories reach the world. A seasoned PR vet, she cut her teeth during the dot-com boom and went on to build public profiles for a wide range of technology companies.</p>
+          </div>
+      </li>
+    </ul>
+</section>
+
+<hr>
+
+<section id="family" class="cf">
+    <div class="c6">
+        <h2>Friends &amp; Family</h2>
+    </div>
+    <div class="c3">
+        <img src="{{ MEDIA_URL }}img/logo_pollenizer.jpg">
+        <p class="serif">Pollenizer creates web businesses. We take innovative ideas and turn them into investable businesses. Some would say we are an incubator but we think we're something altogether different. Since inception, we have created a process that gets out portfolio companies in front of customer quickly and measures performance for maximum impact and investor confidence.</p>
+        <p class="serif"><a href="http://www.pollenizer.com/" target="_blank">Visit Pollenizer</a></p>
+    </div>
+    <div class="c3">
+        <img src="{{ MEDIA_URL }}img/logo_founderslab.jpg">
+        <p class="serif">Founder Labs is a source of new mobile startup ideas with diverse founding teams.</p>
+        <p class="serif">Founder Labs is a 5-week pre-incubator focused on the first phase of launching a mobile startup - finding a team and validating the business idea. Through Founder Labs, aspiring founders build a founding team, learn technical, lean startup skills, validate ideas to find the right product-market fit and rapidly prototype and test.What does this look like? The breakdown: 50% male, 50% female. 50% technical, 50% non-technical.</p>
+        <p class="serif"><a href="http://founderlabs.org/" target="_blank">Visit Founder Labs</a></p>
+    </div>
+</section>
+{% endblock content %}

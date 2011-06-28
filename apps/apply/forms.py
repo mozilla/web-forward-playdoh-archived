@@ -7,8 +7,13 @@ from apply.models import Application
 
 class ApplicationForm(forms.ModelForm):
     """Public-facing Application form used in the web-interface for users."""
+    accept_terms = forms.BooleanField(required=True)
+    accept_privacy = forms.BooleanField(required=True)
+
     class Meta:
         exclude = (
+            'accept_terms',
+            'accept_privacy',
             'created_at',
             'updated_at',
         )
