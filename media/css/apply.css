@@ -26,7 +26,7 @@ body {
 }
 
 body.white {
-    background-image: none;
+    background-image: url('../img/stripes2.png');
     background-color: #fafafa;
 }
 
