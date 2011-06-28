@@ -13,7 +13,7 @@
 <section id="what" class="cf">
     <div class="row">
         <div class="c2">
-            <a id="movie" href="http://www.youtube.com/watch?v=otunbDTGnUI"></a>
+            <a id="movie" href="#web-fwd-video"></a>
         </div>
         <div class="c4">
             <h2>What is Web FWD?</h2>
@@ -268,4 +268,22 @@
         </div>
     </div>
 </section>
+
+<div id="web-fwd-video-container">
+  <video id="web-fwd-video" width="640" height="360" controls>
+    <source src="http://videos.mozilla.org/serv/webfwd/webfwd.mp4"
+      type="video/mp4" />
+    <source
+      src="http://videos.mozilla.org/serv/webfwd/webfwd.webm"
+      type="video/webm" />
+    <source src="http://videos.mozilla.org/serv/webfwd/webfwd.ogv"
+      type="video/ogg" />
+    <object width="640" height="360"
+      type="application/x-shockwave-flash"
+      data="http://www.youtube.com/watch?v=otunbDTGnUI">
+      <param name="movie"
+        value="http://www.youtube.com/watch?v=otunbDTGnUI" />
+    </object>
+  </video>
+</div>
 {% endblock content %}

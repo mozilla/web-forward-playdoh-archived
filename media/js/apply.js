@@ -52,6 +52,8 @@ function updateBuzz() {
 
 $(document).ready(function($) {
     
+    $('body').removeClass('no-js').addClass('js');
+    
     //size what/buzz div
     $(window).bind('load resize', function() {
         var wh = $(window).height();
@@ -67,21 +69,23 @@ $(document).ready(function($) {
     });
     
     //fancy box
-    $("#movie").click(function() {
-        $.fancybox({
-            'padding'             : 0,
-            'overlayShow'         : false,
-            'autoScale'           : false,
-            'transitionIn'        : 'none',
-            'transitionOut'       : 'none',
-            'title'               : this.title,
-            'width'               : 640,
-            'height'              : 388,
-            'href'                : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-            'type'                : 'swf',    // <--add a comma here
-            'swf'                 : {'allowfullscreen':'true'} // <-- flashvars here
-            });
-            return false;
+    $("#movie").fancybox({
+        padding       : 0,
+        overlayShow   : false,
+        autoScale     : false,
+        transitionIn  : 'fade',
+        transitionOut : 'fade',
+        title         : this.title,
+        width         : 640,
+        height        : 388,
+        href          : this.href,
+        type          : 'inline',
+        onComplete    : function() {
+            $(this.href).parent('div').css({
+                height: '360px',
+                overflow: 'hidden'
+            })
+        }
     }); 
 
     //scroll to content
