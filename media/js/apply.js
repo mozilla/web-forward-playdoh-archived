@@ -26,7 +26,7 @@ function updateBuzz() {
         return $("<div>").text(txtDiff).addClass("posted");
     }
 
-    $.get('feed/latest.json', function(feed) {
+    $.get('/media/latest.json', function(feed) {
         function createEntry(obj) {
             var n = $("<li>"), c = n;
             c.text(obj.title);
@@ -130,6 +130,6 @@ $(document).ready(function($) {
     // now load the buzz feed, which has a much less aggressive caching
     // to give you that realtime feel, hence stored in a separate dynamically
     // updated json file.
-    // updateBuzz();
+    updateBuzz();
     
 });
