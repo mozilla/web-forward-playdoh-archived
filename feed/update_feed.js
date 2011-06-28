@@ -43,6 +43,7 @@ http.get({
         for (var i = 0; i < rs.length; i++) {
           if (feed.tweets.length > 3) break;
           feed.tweets.push({
+            who: rs[i].from_user,
             title: rs[i].text,
             posted: rs[i].created_at,
             link: "http://twitter.com/#!/"+rs[i].from_user+"/status/"+rs[i].id_str
@@ -51,7 +52,7 @@ http.get({
         allDone();
       } catch(e) {
         die("Error performing twitter search:" + e);
-      } 
+      }
     });
 }).on('error', function(e) {
   die("Error performing twitter search:" + e);
