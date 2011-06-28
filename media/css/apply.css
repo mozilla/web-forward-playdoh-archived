@@ -800,6 +800,11 @@ footer .c4 li {
     list-style: none;
 }
 
+.form-errors {
+    color: red;
+    text-align: center;
+}
+
 #email-container {
     clear: both;
 }

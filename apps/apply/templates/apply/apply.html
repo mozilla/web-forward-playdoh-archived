@@ -47,7 +47,14 @@
 	{{ csrf() }}
 	
 	{{ form.management_form }}
-	
+
+	{% if form.errors %}
+	  <h4 class="form-errors">
+	    There were issues with your application. Most fields are required;
+	    please review your application, then submit it again.
+	  </h4>
+	{% endif %}
+
   {% for f in form %}
     <div id="{{ f.name }}-container" class="field">
     {% if f.name == 'accept_terms' %}
