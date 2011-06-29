@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block page_title %}Web FWD — Error{% endblock %}
+
+{% block body_id %}five-hundred{% endblock %}
+{% block body_classes %}white{% endblock %}
+
+{% block content %}
+<section id="four-oh-four">
+  <div>
+    <h1>Server Error</h1>
+    
+    <p>
+      There was an error processing your request. Please try again.
+      <a href="{{ url('index') }}">Learn about Web FWD by Mozilla</a>.
+    </p>
+  </div>
+</section>
+{% endblock content %}

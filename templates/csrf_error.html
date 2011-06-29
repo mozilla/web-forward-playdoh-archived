@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_title %}Web FWD — CSRF Error{% endblock %}
+
+{% block body_id %}csrf{% endblock %}
+{% block body_classes %}white{% endblock %}
+
+{% block content %}
+<section id="four-oh-four">
+  <div>
+    <h1>Access Error</h1>
+    
+    <p>
+      You were directed to this site by another site or your token is not
+      valid.
+      <a href="{{ url('index') }}">Learn about Web FWD by Mozilla</a>.
+    </p>
+  </div>
+</section>
+{% endblock content %}
