@@ -71,7 +71,7 @@ http.get({
       parser.addListener('end', function(result) {
         var items = result.channel.item;
         // handle the case where there is only one
-        if (typeof items === 'object') items = [ items ];
+        if (!Array.isArray(items)) items = [ items ];
         feed.posts = [];
         for (var i = 0; i < items.length; i++) {
           if (feed.posts.length > 3) break;
