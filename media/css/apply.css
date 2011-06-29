@@ -782,12 +782,11 @@ footer .c4 li {
     display: inline-block;
 }
 
-/* Specific form elements */
+/** Specific form elements */
 #form .field {
     padding: 15px 39px;
 }
 
-/** Specific form elements */
 #first_name-container, #last_name-container {
     float: left;
     padding-left: 0;
@@ -807,6 +806,11 @@ footer .c4 li {
 
 #email-container {
     clear: both;
+}
+
+/** Video on homepage */
+.js #web-fwd-video-container {
+    display: none;
 }
 
 /* clearfix */
