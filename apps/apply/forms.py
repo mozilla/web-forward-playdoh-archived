@@ -16,6 +16,9 @@ class ApplicationForm(forms.ModelForm):
             'accept_privacy',
             'created_at',
             'updated_at',
+            'accepted_date',
+            'reviewed_date',
+            'comments',
         )
         model = Application
         widgets = {

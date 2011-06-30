@@ -53,7 +53,13 @@ class Application(models.Model):
 
     anecdote = models.TextField(verbose_name='Please tell us something surprising or amusing that one of you has discovered. (The answer need not be related to your project.)')
     other = models.TextField(verbose_name='Anything else we should or need to know?')
-    
+
+    # Admin-only fields; not presented to the user and ignored in
+    # the ApplicationForm class.
+    accepted_date = models.DateTimeField(blank=True)
+    reviewed_date = models.DateTimeField(blank=True)
+    comments = models.TextField(blank=True, verbose_name='Internal comments for submission')
+
     # Timestamps!
     created_at = models.DateTimeField(editable=False)
     updated_at = models.DateTimeField(editable=False)
