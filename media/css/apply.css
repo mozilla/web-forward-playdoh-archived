@@ -1,5 +1,13 @@
 /* color variables */
 /* CSS3 variables */
+
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url('pacifico.ttf') format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
