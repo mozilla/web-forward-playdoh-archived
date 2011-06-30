@@ -38,7 +38,7 @@
 
 <form action="{{ url('apply') }}" method="POST" id="form" class="cf">
 	{{ csrf() }}
-	
+
 	{{ form.management_form }}
 
 	{% if form.errors %}
@@ -71,9 +71,9 @@
       {{ f }}
     </div>
   {% endfor %}
-	
+
 	<input type="submit" id="submit" value="Submit Application">
-	
+
 	<div class="clear"></div>
 </form>
 {% endblock content %}
