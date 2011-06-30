@@ -26,10 +26,26 @@ function updateBuzz() {
         return $("<div>").text(txtDiff).addClass("posted");
     }
 
+    var linkRegex = /(?:https?:\/\/)(?:[\da-z\.-]+)\.(?:[a-z\.]{2,6})(?:[\/\w\.-]*)*\/?(?:#[\w\d=\/\.-]+)?(?:\?[_\.=&\w\d=;]+)?/g;
+    function linkify(msg) {
+        // make links clickable
+        msg = msg.replace(linkRegex, function (match) {
+            return '<a href="' + match + '">' + match + "</a>";
+        });
+        return msg;
+    }
+
     $.get('/media/latest.json', function(feed) {
         function createEntry(obj) {
             var n = $("<li>"), c = n;
-            c.text(obj.title);
+            if (obj.who) {
+                var w = $("<a>").attr('href', "http://twitter.com/#!/" + obj.who);
+                w.text("@" + obj.who);
+                w.appendTo(c);
+            }
+            var s = $("<span>");
+            s.html(linkify(obj.title));
+            s.appendTo(c);
             if (obj.link && obj.link.length) {
                 c = $("<a>").attr('href', obj.link).appendTo(n);
             }
@@ -51,16 +67,16 @@ function updateBuzz() {
 }
 
 $(document).ready(function($) {
-    
+
     $('body').removeClass('no-js').addClass('js');
-    
+
     //size what/buzz div
     $(window).bind('load resize', function() {
         var wh = $(window).height();
         $('#what').css({'height' : wh-82 });
         $('#buzz').css({'min-height' : wh-81 });
     });
-    
+
     //nice easing
     $.extend($.easing, {
         easeOutExpo: function (x, t, b, c, d) {

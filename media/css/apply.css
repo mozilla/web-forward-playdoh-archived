@@ -549,6 +549,10 @@ section {
     font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
+#buzz ul li > a:first-child {
+    margin-right: .5em;
+}
+
 #buzz ul li:last-child {
     border: none;
 }
