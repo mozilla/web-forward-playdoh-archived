@@ -825,6 +825,12 @@ footer .c4 li {
     display: none;
 }
 
+/* Fancybox overlay hack (make it transparent but clickablee) */
+#fancybox-overlay {
+    cursor: default !important;
+    opacity: 0 !important;
+}
+
 /* clearfix */
 .cf:after {
     content: ".";
@@ -842,4 +848,3 @@ html[xmlns] .cf {
 * html .cf {
     height: 1%;
 }
-

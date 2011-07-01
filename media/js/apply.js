@@ -87,7 +87,7 @@ $(document).ready(function($) {
     //fancy box
     $("#movie").fancybox({
         padding       : 0,
-        overlayShow   : false,
+        overlayShow   : true,
         autoScale     : false,
         transitionIn  : 'fade',
         transitionOut : 'fade',
