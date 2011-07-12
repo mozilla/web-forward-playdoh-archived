@@ -551,10 +551,18 @@ section {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-#buzz ul li .posted, #buzz ul li .date {
+#buzz ul li .posted, #buzz ul li .date, #buzz ul li .readmore span {
     color: #74726a;
     font-size: 12px;
     font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+
+#buzz ul li .readmore {
+    float: left;
+}
+
+#buzz ul li .readmore span {
+    margin: 0 .3em 0 .3em;
 }
 
 #buzz ul li > a:first-child {

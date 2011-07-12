@@ -46,8 +46,12 @@ function updateBuzz() {
             var s = $("<span>");
             s.html(linkify(obj.title));
             s.appendTo(c);
+            $("<br>").appendTo(c);
             if (obj.link && obj.link.length) {
-                c = $("<a>").attr('href', obj.link).appendTo(n);
+                c.append($("<div>").addClass("readmore")
+                         .append($("<a>").attr('href', obj.link).text("Read more..."))
+                         .append($("<span>").text("|"))
+                        );
             }
             if (obj.posted) c.append(toRelDate(obj.posted));
             if (obj.when) c.append($("<div>").text(obj.when).addClass("date"));
