@@ -86,7 +86,7 @@ http.get({
       parser.parseString(body);
     });
 }).on('error', function(e) {
-  die("Error performing twitter search:" + e);
+  die("Error fetching blog posts:" + e);
 });
 
 
