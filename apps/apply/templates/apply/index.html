@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 
-{% block page_title %}Web FWD by Mozilla{% endblock %}
+{% block page_title %}WebFWD by Mozilla{% endblock %}
 
 {% block body_id %}index{% endblock %}
 
 {% block content %}
-<section id="what" class="cf">
+<section id="intro" class="cf">
     <div class="row">
         <div class="c2">
             <a id="movie" href="#web-fwd-video"></a>
         </div>
         <div class="c4">
-            <h2>What is Web FWD?</h2>
-            <p class="serif"><span class="yellow">Web FWD</span> (Forward) is the new Innovation Accelerator from <a href="http://mozilla.com/">Mozilla</a>. It's a chance for us to work with you, product builders, and for you to work with us and our brilliant <a href="{{ url('mentorship') }}">mentors</a>. It's about creating open solutions that push the Web forward, together. Interested? <a class="continue">Keep reading.</a></p>
+            <h2>What is WebFWD?</h2>
+            <p class="serif"><span class="yellow">WebFWD</span> (Web Forward) is the new Innovation Accelerator from <a href="http://mozilla.com/">Mozilla</a>. It's a chance for us to work with builders like you, and for you to work with us and our brilliant <a href="mentorship.html">mentors</a>. It's about creating open solutions that push the Web forward, together.<!--  Interested? <a class="continue">Keep reading.</a> --></p>
+            
+            <div class="promoted">
+                <p class="serif">Latest News<strong> &raquo;</strong> <a href="{{ url('apply') }}">Apply now and be the amongst the first to join!</a></p>
+            </div>
         </div>
     </div>
 </section>
@@ -23,7 +27,7 @@
 
 <nav id="primaryNav" class="cf">
     <div class="c2 logo">
-        <img src="{{ MEDIA_URL }}img/fwd_logo.png" title="Web FWD" alt="Web FWD">
+        <img src="{{ MEDIA_URL }}img/fwd_logo.png" title="WebFWD" alt="WebFWD">
     </div>
     <ul class="c4">
         <li><a href="#what">What</a></li>
@@ -37,11 +41,66 @@
         <li><a class="mentors" href="{{ url('mentorship') }}">Mentors</a></li>
         <li><a class="apply" href="{{ url('apply') }}">Apply</a></li>
     </ul>
+    <div id="callToAction"></div>
 </nav>
 
-<a name="what"></a>
 <section id="splash" class="cf">
 </section>
+
+<a name="what"></a>
+<section id="what" class="cf">
+     <div class="row">
+         <div class="c6">
+             <h2>What We Offer</h2>
+         </div>
+     </div>
+     <div class="row">
+         <div class="c2">
+             <p class="serif">The WebFWD program comes in two versions: a 4-week Bootcamp and a 6-month Fellows program.</p>
+         </div>
+     </div>
+           
+     <div class="row marginTop">  
+         <div class="c2 both">
+             <h3>Both programs provide</h3>
+             <ul>
+                 <li>An opportunity to work with the Mozilla crew with access to <strong>key Mozilla personnel</strong></li>
+                 <li>Mentorship sessions with <strong>leading experts</strong> and interesting people</li>
+                 <li>Free access to <strong>Mozilla tech tools & infrastructure</strong> for your project</li>
+                 <li>Coaching on how to <strong>pitch</strong> &amp; <strong>position</strong> your product</li>
+                 <li>And, of course, lots of <strong>fun & awesomeness!</strong></li>
+             </ul>
+         </div>
+         <div class="c2 bootcamp">
+             <h3>Bootcamp (4 weeks)</h3>
+             <ul>
+                 <li>A <strong>four-week intensive</strong> program based at one of our Mozilla Spaces. (The program will kick off in San Francisco.)</li>
+                 <li>Mozilla will provide food & housing during the program so you can focus on building toward a <strong>Minimum Viable Product</strong> (MVP) in 4 weeks</li>
+                 <li>Designed for <strong>students and hacker-builders</strong> in the early phases of prototyping an idea</li>
+                 <li>The code you create at Bootcamp stays open, but you are permitted to fork code into a <strong>commercial license</strong></li>
+             </ul>
+             <div class="caption serif"><em>*Applicants currently must have a US-work permit</em></div>
+         </div>  
+         <div class="c2 fellows">
+             <h3>Fellows (6 months)</h3>
+             <ul>
+                 <li>A <strong>six-month commitment</strong> for builders who are already on the road to a Minimal Viable Product (MVP). Option to participate for a full twelve months.</li>
+                 <li>Regular <strong>1:1 contact with Mozillians</strong> and possible access to Mozilla Spaces. Relocation and full-time commitment are not required to participate.</li>
+                 <li><strong>Your code stays open</strong>. Potential commercial models with appropriate public licensing (like MPL) like hosted, freemium or software/platform as a service are options, but the core product or key tech innovation should remain open source.</li>
+             </ul>
+             <div class="caption serif"><em>*Applicants welcome from anywhere in the world</em></div>
+         </div>              
+     </div>
+     
+     <div class="row marginTop"> 
+         <div class="c3">
+             <h3>What We Look For</h3>
+             <p class="serif">Mozilla's mission is to promote openness, innovation and opportunity on the web. Our product vision is to enable people to "Discover, experience and connect on your own terms." If your project shares this vision and supports openness on the web, WebFWD is interested in hearing from you.</p>
+         </div>
+     </div>
+ </section>
+ 
+ <hr>
 
 <a name="how"></a>
 <section id="how" class="cf">
@@ -53,7 +112,7 @@
     
     <div class="row">
         <div class="c2">
-            <p class="serif">We'll bring teams with bold product visions for the open Web into one of our global offices for 4 weeks at a time and give you access to our tools and resources.</p>
+            <p class="serif">We'll bring teams with bold product visions for the open Web into the Mozilla community and give you access to our tools and resources.</p>
         </div>
         
         <div class="c2">
@@ -72,7 +131,7 @@
         <div class="c3">
             <h3>What We Offer</h3>
             <ul id="offer" class="serif">
-                <li><span class="bright">Food &amp; housing</span> during the program
+                <li><span class="bright">Food &amp; housing</span> during the program (for bootcamp participants)
                 <li>The opportunity to work alongside the <span class="bright">Mozilla crew</span>
                 <li>Help with <span class="bright">IT infrastructure</span> 
                 <li>Access to key <span class="bright">Mozilla personnel</span>
@@ -188,7 +247,7 @@
             <h2>Who?</h2>
         </div>
         <div class="c2">
-            <p class="serif"><span class="yellow">Web FWD</span> is open to anyone with the building blocks of a great product: hackers, builders and entrepreneurs with bold ideas for a better Web.</p>
+            <p class="serif"><span class="yellow">WebFWD</span> is open to anyone with the building blocks of a great product: hackers, builders and entrepreneurs with bold ideas for a better Web.</p>
         </div>
         <div class="c2">
             <p class="serif">If you and your buddies think you have what it takes to build an amazing Web app, Mobile, or Social product, <a href="{{ url('apply') }}">apply now</a>!</p>
@@ -220,7 +279,7 @@
             <h2>Why?</h2>
         </div>
         <div class="c2">
-            <p class="serif">Mozilla's motivation for <span class="yellow">Web FWD</span> is to bring even more innovation to the open Web. For you, this program provides:</p>
+            <p class="serif">Mozilla's motivation for <span class="yellow">WebFWD</span> is to bring even more innovation to the open Web. For you, this program provides:</p>
             <ul>
                 <li>
                     <h4>Focus to Build</h4>
