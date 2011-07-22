@@ -56,31 +56,20 @@
 
       {{ js('apply_js') }}
       
-      <!-- START OF SmartSource Data Collector TAG -->
-      <!-- Copyright (c) 1996-2011 Webtrends Inc.  All rights reserved. -->
-      <!-- Version: 9.4.0 -->
-      <!-- Tag Builder Version: 3.2  -->
-      <!-- Created: 6/24/2011 5:14:03 PM -->
+      <a title="Web Statistics" href="http://getclicky.com/66455093"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
       <script type="text/javascript">
-      //<![CDATA[
-      var _tag=new WebTrends();
-      _tag.dcsGetId();
-      //]]>
+      var clicky_site_ids = clicky_site_ids || [];
+      clicky_site_ids.push(66455590);
+      (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//static.getclicky.com/js';
+        ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+      })();
       </script>
-      <script type="text/javascript">
-      //<![CDATA[
-      _tag.dcsCustom=function(){
-      // Add custom parameters here.
-      //_tag.DCSext.param_name=param_value;
-      }
-      _tag.dcsCollect();
-      //]]>
-      </script>
-      <noscript>
-      <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//statse.webtrendslive.com/dcs1gstlsvz5bdaufxly07hkp_4n9x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.4.0&amp;dcssip=www.webfwd.org"/></div>
-      </noscript>
-      <!-- END OF SmartSource Data Collector TAG -->
-      
+      <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66455590ns.gif" /></p></noscript>
+
     {% endblock %}
   </body>
 </html>
