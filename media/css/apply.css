@@ -1,62 +1,3 @@
-/* color variables */
-@brandColor: #4E7892;
-@adminColor: #ECF4F4;
-
-@topicColor: #cb4b16;
-@peopleColor: #859900;
-@eventColor: #2aa198;
-
-@color1: rgba(255, 160, 0, 1);
-@color2: rgba(228, 63, 63, 1);
-@color3: rgba(0, 146, 222, 1);
-@color4: rgba(90, 179, 90, 1);
-
-@light: #74726A;
-@medium: rgba(0,0,0,0.75);
-
-/* CSS3 variables */
-.rounded (@radius: 5px) {
-    -webkit-border-radius: @radius;
-       -moz-border-radius: @radius;
-         -o-border-radius: @radius;
-            border-radius: @radius;
-}
-
-.gradient (@start:#fff, @end:#fafafa) {
-    background-image: -moz-linear-gradient(top, @start 0%, @end 100%);
-    background-image: -o-linear-gradient(top, @start 0%, @end 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @end));
-}
-
-.shadow (@shadow: 1px 1px 1px #ccc) {
-    -webkit-box-shadow: @shadow;
-       -moz-box-shadow: @shadow;
-         -o-box-shadow: @shadow;
-            box-shadow: @shadow;
-}
-
-.shadow2 (@shadow: 1px 1px 1px #ccc, @shadow2: 1px 1px 1px #ccc) {
-    -webkit-box-shadow: @shadow, @shadow2;
-       -moz-box-shadow: @shadow, @shadow2;
-         -o-box-shadow: @shadow, @shadow2;
-            box-shadow: @shadow, @shadow2;
-}
-
-.transition (@transition: all 1s ease-in) {
-    -webkit-transition: @transition;
-       -moz-transition: @transition;
-         -o-transition: @transition;
-            transition: @transition;
-}
-
-.boxSizing (@box: border-box) {
-    -webkit-box-sizing: @box;
-       -moz-box-sizing: @box;
-         -o-box-sizing: @box;
-            box-sizing: @box;
-}
-/* CSS3 variables */
-
 /* first for IE 6/7/8 */
 @font-face {
   font-family: MetaWebPro-Black;
@@ -109,7 +50,7 @@ body.white #primaryNav {
     background-color: #fff;
 }
 
-body.white #what {
+body.white #intro {
     background-image: -moz-radial-gradient(center center, #000000 0%, #fffbed 70%);
 }
 
@@ -373,7 +314,10 @@ section {
   color: #fff;
   border: 1px solid #d70000;
   text-shadow: 0 -1px 0 #d70000;
-  .rounded(3px);
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
 
   background-image: -webkit-gradient(
                   linear,
@@ -441,7 +385,7 @@ section {
     float: right;
 }
 
-#what {
+#intro {
     padding: 0;
     display: table-cell;
     vertical-align: middle;
@@ -454,19 +398,19 @@ section {
     transition: background-image 0.4s ease-in;
 }
 
-#what h2 {
+#intro h2 {
     margin: 0 0 14px 0;
 }
 
-#what .row {
+#intro .row {
     width: 960px;
 }
 
-#what .center {
+#intro .center {
     margin: 0 170px;
 }
 
-#what #movie {
+#intro #movie {
     width: 300px;
     height: 160px;
     display: block;
@@ -475,8 +419,23 @@ section {
     background-position: top left;
 }
 
-#what #movie:hover {
+#intro #movie:hover {
     background-position: bottom left;
+}
+
+#intro p{
+  margin: 0;
+}
+
+#intro .promoted {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+#intro .promoted a {
+  font-style: italic;
 }
 
 #splash {
@@ -485,6 +444,68 @@ section {
     background-position: top center;
     padding: 0;
     height: 278px;
+}
+
+#what .c6 {
+  margin: 0 10px 21px;
+}
+
+#what .marginTop {
+  margin-top: 40px;
+}
+
+#what .caption {
+    margin: 7px 0 0 0;
+}
+
+#what h3 {
+    margin: 0 0 14px 0;
+}
+
+#what ul {
+    padding: 10px 0 0;
+    background-color: #eee;
+    text-shadow: 1px 1px 0 #fff;
+    color: #222;
+    list-style-type: none;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+         -o-border-radius: 5px;
+            border-radius: 5px;
+}
+
+#what li {
+  border-bottom: 1px solid #fafafa;
+  padding: 0 10px 10px;
+  margin: 0 0 10px;
+  width: 280px;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+       -o-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+#what li p {
+  color: #222;
+  font-size: 12px;
+}
+
+#what .both ul {
+  background-color: #FFDADA;
+  color: #BF2B2B;
+  text-shadow: 1px 1px 0 #FFEDED;
+}
+
+#what .fellows ul {
+    background-color: #CFE3FF;
+    color: #19498B;
+    text-shadow: 1px 1px 0 #E3EFFF;
+}
+
+#what .bootcamp ul {
+    background-color: #C8E8CA;
+    color: #16591A;
+    text-shadow: 1px 1px 0 #E0FCE2;
 }
 
 #how .c1,
