@@ -1,13 +1,11 @@
-/* first for IE 6/7/8 */
-@font-face {
-  font-family: MetaWebPro-Black;
-  src: url(MetaWebPro-Black.eotlite);
-}
+/* color variables */
+/* CSS3 variables */
 
-/* then for Mozilla browsers -> Firefox */
 @font-face {
-  font-family: MetaWebPro-Black;
-  src: url(MetaWebPro-Black.woff) format('woff');
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url('pacifico.ttf') format('truetype');
 }
 
 * {
@@ -50,12 +48,12 @@ body.white #primaryNav {
     background-color: #fff;
 }
 
-body.white #intro {
+body.white #what {
     background-image: -moz-radial-gradient(center center, #000000 0%, #fffbed 70%);
 }
 
 a {
-    color: #d70000;
+    color: red;
     cursor: pointer;
     text-decoration: none;
 }
@@ -91,14 +89,11 @@ h1 {
 }
 
 h2 {
-    font-size: 28px;
-    color: #454545;
-    letter-spacing: -0.02em;
+    font-size: 24px;
+    color: #222;
     font-weight: normal;
-    font-family: "MetaWebPro-Black", Helvetica Neue, Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
+    font-family: "Pacifico", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-
 
 .light {
     font-weight: 200;
@@ -137,7 +132,7 @@ img {
 }
 
 .red {
-    color: #d70000;
+    color: red;
 }
 
 .bright {
@@ -305,30 +300,17 @@ section {
 }
 
 #primaryNav li a:hover {
-    color: #d70000;
+    color: red;
 }
 
 #primaryNav li a.apply {
-  padding: 5px 10px;
-  background-color: red;
-  color: #fff;
-  border: 1px solid #d70000;
-  text-shadow: 0 -1px 0 #d70000;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-       -o-border-radius: 3px;
-          border-radius: 3px;
-
-  background-image: -webkit-gradient(
-                  linear,
-                  left top,
-                  left bottom,
-                  color-stop(0%, #FF7373),
-                  color-stop(50%, #FF5656),
-                  color-stop(50%, #FF3A3A),
-                  color-stop(100%, #D70000)
-            );
-  background-image: -moz-linear-gradient(center top , #FF7373 0%, #FF5656 50%, #FF3A3A 50%, #D70000 100%);
+    padding: 3px 7px;
+    background-color: red;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
 }
 
 #primaryNav li a.apply:hover {
@@ -338,27 +320,6 @@ section {
 #primaryNav .selected {
     font-weight: bold;
     color: red;
-}
-
-#callToAction {
-    position: absolute;
-    top: -100px;
-    opacity: 0;
-    right: 0;
-    width: 105px;
-    height: 110px;
-    display: block;
-    background-image: url('../img/applyNow.png');
-    
-    -webkit-transition: all 1s 0.75s ease;
-       -moz-transition: all 1s 0.75s ease;
-         -o-transition: all 1s 0.75s ease;
-            transition: all 1s 0.75s ease;
-}
-
-#callToAction.visible {
-    opacity: 1;
-    top: -110px;
 }
 
 /* content */
@@ -385,7 +346,7 @@ section {
     float: right;
 }
 
-#intro {
+#what {
     padding: 0;
     display: table-cell;
     vertical-align: middle;
@@ -398,19 +359,19 @@ section {
     transition: background-image 0.4s ease-in;
 }
 
-#intro h2 {
+#what h2 {
     margin: 0 0 14px 0;
 }
 
-#intro .row {
+#what .row {
     width: 960px;
 }
 
-#intro .center {
+#what .center {
     margin: 0 170px;
 }
 
-#intro #movie {
+#what #movie {
     width: 300px;
     height: 160px;
     display: block;
@@ -419,23 +380,8 @@ section {
     background-position: top left;
 }
 
-#intro #movie:hover {
+#what #movie:hover {
     background-position: bottom left;
-}
-
-#intro p{
-  margin: 0;
-}
-
-#intro .promoted {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  display: inline-block;
-}
-
-#intro .promoted a {
-  font-style: italic;
 }
 
 #splash {
@@ -444,68 +390,6 @@ section {
     background-position: top center;
     padding: 0;
     height: 278px;
-}
-
-#what .c6 {
-  margin: 0 10px 21px;
-}
-
-#what .marginTop {
-  margin-top: 40px;
-}
-
-#what .caption {
-    margin: 7px 0 0 0;
-}
-
-#what h3 {
-    margin: 0 0 14px 0;
-}
-
-#what ul {
-    padding: 10px 0 0;
-    background-color: #eee;
-    text-shadow: 1px 1px 0 #fff;
-    color: #222;
-    list-style-type: none;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-         -o-border-radius: 5px;
-            border-radius: 5px;
-}
-
-#what li {
-  border-bottom: 1px solid #fafafa;
-  padding: 0 10px 10px;
-  margin: 0 0 10px;
-  width: 280px;
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-       -o-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
-#what li p {
-  color: #222;
-  font-size: 12px;
-}
-
-#what .both ul {
-  background-color: #FFDADA;
-  color: #BF2B2B;
-  text-shadow: 1px 1px 0 #FFEDED;
-}
-
-#what .fellows ul {
-    background-color: #CFE3FF;
-    color: #19498B;
-    text-shadow: 1px 1px 0 #E3EFFF;
-}
-
-#what .bootcamp ul {
-    background-color: #C8E8CA;
-    color: #16591A;
-    text-shadow: 1px 1px 0 #E0FCE2;
 }
 
 #how .c1,

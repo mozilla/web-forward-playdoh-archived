@@ -12,15 +12,6 @@ class ApplicationForm(forms.ModelForm):
 
     class Meta:
         exclude = (
-            # Legacy fields; now excluded
-            'reason_for_idea',
-            'uniqueness_of_idea',
-            'why_mozilla',
-            'team_exclusive_members',
-            'team_non_exclusive_members',
-            'legal',
-            
-            # Hidden from appearing in the generated form HTML output
             'accept_terms',
             'accept_privacy',
             'created_at',
