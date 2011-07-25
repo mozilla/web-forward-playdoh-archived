@@ -868,6 +868,10 @@ section {
     margin: 0 0 40px 0;
 }
 
+#family .c3 {
+  padding-bottom: 12px;
+}
+
 footer {
     width: 962px;
     margin-left: -1px;
