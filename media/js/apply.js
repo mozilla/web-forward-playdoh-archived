@@ -77,8 +77,13 @@ $(document).ready(function($) {
     //size what/buzz div
     $(window).bind('load resize', function() {
         var wh = $(window).height();
-        $('#what').css({'height' : wh-82 });
+        $('#intro').css({'height' : wh-82 });
         $('#buzz').css({'min-height' : wh-81 });
+    });
+
+    //show call to action
+    $(window).load(function() {
+        $('#callToAction').addClass('visible');
     });
 
     //nice easing
@@ -87,7 +92,7 @@ $(document).ready(function($) {
             return (t === d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
         }
     });
-    
+
     //fancy box
     $("#movie").fancybox({
         padding       : 0,
@@ -109,7 +114,6 @@ $(document).ready(function($) {
     }); 
 
     //scroll to content
-    
     $('#primaryNav img, a.continue').click(function() {
         var wh = $(window).height();
         $('body').scrollTo({top:(wh-81), left:'0px'}, 500, {easing: 'easeOutExpo'});
@@ -150,10 +154,10 @@ $(document).ready(function($) {
             }
         });
     }
-    
+
     // now load the buzz feed, which has a much less aggressive caching
     // to give you that realtime feel, hence stored in a separate dynamically
     // updated json file.
     updateBuzz();
-    
+
 });

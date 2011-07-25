@@ -1,13 +1,3 @@
-/* color variables */
-/* CSS3 variables */
-
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Pacifico Regular'), local('Pacifico-Regular'), url('pacifico.ttf') format('truetype');
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +5,11 @@
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+@font-face {
+    font-family: MetaWebPro-Black;
+    src: url(../fonts/MetaWebPro-Black.woff) format('woff');
 }
 
 body {
@@ -46,10 +41,6 @@ body.white #wrapper {
 
 body.white #primaryNav {
     background-color: #fff;
-}
-
-body.white #what {
-    background-image: -moz-radial-gradient(center center, #000000 0%, #fffbed 70%);
 }
 
 a {
@@ -89,10 +80,12 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
-    color: #222;
+    font-size: 28px;
+    color: #454545;
     font-weight: normal;
-    font-family: "Pacifico", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "MetaWebPro-Black", Helvetica Neue, Helvetica, Arial, sans-serif;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
 }
 
 .light {
@@ -132,7 +125,7 @@ img {
 }
 
 .red {
-    color: red;
+    color: #d70000;
 }
 
 .bright {
@@ -300,17 +293,21 @@ section {
 }
 
 #primaryNav li a:hover {
-    color: red;
+    color: #d70000;
 }
 
 #primaryNav li a.apply {
-    padding: 3px 7px;
+    background-image: -moz-linear-gradient(center top, #ff7373 0%, #ff5656 50%, #ff3a3a 50%, #d70000 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff7373), color-stop(50%, #ff5656), color-stop(50%, #ff3a3a), color-stop(100%, #d70000));
+    border: 1px solid #d70000;
+    padding: 5px 10px;
     background-color: red;
     color: #fff;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -o-border-radius: 3px;
     border-radius: 3px;
+    text-shadow: 0 -1px 0 #d70000;
 }
 
 #primaryNav li a.apply:hover {
@@ -320,6 +317,26 @@ section {
 #primaryNav .selected {
     font-weight: bold;
     color: red;
+}
+
+#primaryNav #callToAction {
+    position: absolute;
+    top: -100px;
+    opacity: 0;
+    right: 0;
+    width: 105px;
+    height: 110px;
+    display: block;
+    background-image: url('../img/applyNow.png');
+    -webkit-transition: all 1s 0.75s ease;
+    -moz-transition: all 1s 0.75s ease;
+    -o-transition: all 1s 0.75s ease;
+    transition: all 1s 0.75s ease;
+}
+
+#primaryNav #callToAction.visible {
+    opacity: 1;
+    top: -110px;
 }
 
 /* content */
@@ -346,7 +363,7 @@ section {
     float: right;
 }
 
-#what {
+#intro {
     padding: 0;
     display: table-cell;
     vertical-align: middle;
@@ -359,29 +376,44 @@ section {
     transition: background-image 0.4s ease-in;
 }
 
-#what h2 {
+#intro h2 {
     margin: 0 0 14px 0;
 }
 
-#what .row {
+#intro .row {
     width: 960px;
 }
 
-#what .center {
+#intro .center {
     margin: 0 170px;
 }
 
-#what #movie {
+#intro #movie {
     width: 300px;
     height: 160px;
     display: block;
-    margin-top: -22px;
+    margin-top: -9px;
     background-image: url('../img/movie.png');
     background-position: top left;
 }
 
-#what #movie:hover {
+#intro #movie:hover {
     background-position: bottom left;
+}
+
+#intro p {
+    margin: 0;
+}
+
+#intro .promoted {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+#intro .promoted a {
+    font-style: italic;
 }
 
 #splash {
@@ -390,6 +422,73 @@ section {
     background-position: top center;
     padding: 0;
     height: 278px;
+}
+
+#what .c6 {
+    margin: 0 10px 21px;
+}
+
+#what .marginTop {
+    margin-top: 40px;
+}
+
+#what .caption {
+    margin: 7px 0 0 0;
+}
+
+#what h3 {
+    margin: 0 0 14px 0;
+}
+
+#what ul {
+    padding: 10px 0 0;
+    background-color: #eee;
+    text-shadow: 1px 1px 0 #fff;
+    color: #222;
+    list-style-type: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#what ul li {
+    border-bottom: 1px solid #fafafa;
+    padding: 0 10px 10px;
+    margin: 0 0 10px;
+    width: 280px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -o-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#what ul li p {
+    color: #222;
+    font-size: 12px;
+}
+
+#what ul li:last-child {
+    border-bottom: none;
+    margin: 0;
+}
+
+#what .both ul {
+    background-color: #FFDADA;
+    color: #BF2B2B;
+    text-shadow: 1px 1px 0 #FFEDED;
+}
+
+#what .fellows ul {
+    background-color: #CFE3FF;
+    color: #19498B;
+    text-shadow: 1px 1px 0 #E3EFFF;
+}
+
+#what .bootcamp ul {
+    background-color: #C8E8CA;
+    color: #16591A;
+    text-shadow: 1px 1px 0 #E0FCE2;
 }
 
 #how .c1,
@@ -551,22 +650,10 @@ section {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-#buzz ul li .posted, #buzz ul li .date, #buzz ul li .readmore span {
+#buzz ul li .posted, #buzz ul li .date {
     color: #74726a;
     font-size: 12px;
     font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
-}
-
-#buzz ul li .readmore {
-    float: left;
-}
-
-#buzz ul li .readmore span {
-    margin: 0 .3em 0 .3em;
-}
-
-#buzz ul li > a:first-child {
-    margin-right: .5em;
 }
 
 #buzz ul li:last-child {
@@ -779,10 +866,6 @@ section {
 
 #mentors h2, #family h2 {
     margin: 0 0 40px 0;
-}
-
-#family .c3 {
-  margin-bottom: 21px;
 }
 
 footer {
