@@ -45,3 +45,7 @@ def mentorship(request):
 def thanks(request):
     """Thanks page; displayed after a successful application submission."""
     return jingo.render(request, 'apply/thanks.html')
+
+def projects(request):
+    """Project page for Web Forward"""
+    return jingo.render(request, 'apply/projects.html')

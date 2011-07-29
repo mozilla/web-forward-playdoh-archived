@@ -9,4 +9,5 @@ urlpatterns = patterns('apply.views',
     url(r'^faq$', 'faq', name='faq'),
     url(r'^mentorship$', 'mentorship', name='mentorship'),
     url(r'^thanks$', 'thanks', name='thanks'),
+    url(r'^projects$', 'projects', name='projects'),
 )
