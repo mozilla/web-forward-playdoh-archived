@@ -6,16 +6,6 @@ from django.db import models
 from django.db.models import Count, signals
 
 
-AREAS_OF_INTEREST = (
-    ('Identity', 'Identity'),
-    ('Social', 'Social'),
-    ('User Mediated Data', 'User Mediated Data'),
-    ('Personalization', 'Personalization'),
-    ('Contextual Integrity', 'Contextual Integrity'),
-    ('Read-Write Ability', 'Read-Write Ability'),
-    ('Core', 'Core'),
-)
-
 PROGRAMS = (
     ('6-month Fellows Program', '6-month Fellows Program'),
     ('4-week Bootcamp', '4-week Bootcamp'),
@@ -47,8 +37,7 @@ class Application(models.Model):
     pitch = models.TextField(verbose_name='What are you building? What is your product about?')
     idea_relevance = models.TextField(verbose_name='Why do you think your product matters? Why should anyone care?')
 
-    interest = models.CharField(max_length=50, choices=AREAS_OF_INTEREST,
-                                verbose_name='The WebFWD site lists areas of interest to Mozilla and relevant to the open, decentralized Web. How does your solution relate to these interest areas?')
+    interest = models.TextField(verbose_name='The WebFWD site lists areas of interest to Mozilla and relevant to the open, decentralized Web. How does your solution relate to these interest areas?')
 
     benefit = models.TextField(verbose_name='How do you hope to benefit from WebFWD?')
 
