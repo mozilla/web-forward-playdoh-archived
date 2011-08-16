@@ -57,5 +57,11 @@ djcelery.setup_loader()
 import safe_django_forms
 safe_django_forms.monkeypatch()
 
+# Monkey-patch Django's csrf_protect decorator to use session-based CSRF
+# tokens.
+if 'session_csrf' in settings.INSTALLED_APPS:
+    import session_csrf
+    session_csrf.monkeypatch()
+
 if __name__ == "__main__":
     execute_manager(settings)

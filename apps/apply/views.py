@@ -9,11 +9,12 @@ from django.views.decorators.vary import vary_on_headers
 
 import jingo
 from commons.urlresolvers import reverse
+from session_csrf import anonymous_csrf
 from tower import ugettext as _
 
 from apply.forms import ApplicationForm
 
-
+@anonymous_csrf
 def apply(request):
     """Display the form to add a new Application to the database."""
     if request.method == 'POST':

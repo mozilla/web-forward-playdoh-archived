@@ -38,16 +38,16 @@
 </section>
 
 <form action="{{ url('apply') }}" method="POST" id="form" class="cf">
-	{{ csrf() }}
+  {{ csrf() }}
 
-	{{ form.management_form }}
+  {{ form.management_form }}
 
-	{% if form.errors %}
-	  <h4 class="form-errors">
-	    There were issues with your application. Most fields are required;
-	    please review your application, then submit it again.
-	  </h4>
-	{% endif %}
+  {% if form.errors %}
+    <h4 class="form-errors">
+      There were issues with your application. Most fields are required;
+      please review your application, then submit it again.
+    </h4>
+  {% endif %}
 
   {% for f in form %}
     <div id="{{ f.name }}-container" class="field">

@@ -129,8 +129,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
-    'django.core.context_processors.csrf',
     'django.contrib.messages.context_processors.messages',
+    'session_csrf.context_processor',
 
     'commons.context_processors.i18n',
     #'jingo_minify.helpers.build_ids',
@@ -186,9 +186,9 @@ MIDDLEWARE_CLASSES = (
     'commons.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'session_csrf.CsrfMiddleware',
 
     'commonware.middleware.FrameOptionsHeader',
 )
@@ -199,6 +199,7 @@ INSTALLED_APPS = (
     # Local apps
     'commons',  # Content common to most playdoh-based apps.
     'jingo_minify',
+    'session_csrf',
     'tower',  # for ./manage.py extract (L10n)
 
     'apply',
@@ -219,7 +220,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     # 'django.contrib.sites',
     'django.contrib.messages',
-    
+
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
