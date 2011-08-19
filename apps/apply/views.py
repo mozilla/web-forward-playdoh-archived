@@ -14,7 +14,7 @@ from tower import ugettext as _
 
 from apply.forms import ApplicationForm
 
-@anonymous_csrf
+@csrf_exempt
 def apply(request):
     """Display the form to add a new Application to the database."""
     if request.method == 'POST':
