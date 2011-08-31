@@ -60,35 +60,47 @@ http.get({
 
 
 // #3
-http.get({
-  host: "blog.webfwd.org",
-  path: "/rss"
-}, function (res) {
-  var body = "";
-  res.on('data', function(chunk) { body+=chunk; } )
-    .on('end', function() {
-      var parser = new xml2js.Parser();
-      parser.addListener('end', function(result) {
-        var items = result.channel.item;
-        // handle the case where there is only one
-        if (!Array.isArray(items)) items = [ items ];
-        feed.posts = [];
-        for (var i = 0; i < items.length; i++) {
-          if (feed.posts.length > 3) break;
-          feed.posts.push({
-            title: items[i].title,
-            posted: items[i].pubDate,
-            link: items[i].link
-          });
-        }
-        allDone();
+// tumblr has some odd redirection behavior that seems to be 
+// anti-robot oriented.  From time to time we must follow redirects
+// for the feed to continue working
+var feedFetchTries = 0;
+function tryFeedFetch(p) {
+  http.get({
+    host: "blog.webfwd.org",
+    path: p
+  }, function (res) {
+    if (res.statusCode === 302) {
+      if (++feedFetchTries >= 3) die('Too many redirects on tumblr');
+      tryFeedFetch(res.headers['location']);
+      return;
+    }
+    console.log(res);	  
+    var body = "";
+    res.on('data', function(chunk) { body+=chunk; } )
+      .on('end', function() {
+        var parser = new xml2js.Parser();
+        parser.addListener('end', function(result) {
+          var items = result.channel.item;
+          // handle the case where there is only one
+          if (!Array.isArray(items)) items = [ items ];
+          feed.posts = [];
+          for (var i = 0; i < items.length; i++) {
+            if (feed.posts.length > 3) break;
+            feed.posts.push({
+              title: items[i].title,
+              posted: items[i].pubDate,
+              link: items[i].link
+            });
+          }
+          allDone();
+        });
+        parser.parseString(body);
       });
-      parser.parseString(body);
-    });
-}).on('error', function(e) {
-  die("Error fetching blog posts:" + e);
-});
-
+  }).on('error', function(e) {
+    die("Error fetching blog posts:" + e);
+  });
+};
+tryFeedFetch('/rss');
 
 // when all done, we'll print
 var numDone = 0;
