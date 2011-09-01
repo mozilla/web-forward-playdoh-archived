@@ -74,7 +74,7 @@ function tryFeedFetch(p) {
       tryFeedFetch(res.headers['location']);
       return;
     }
-    console.log(res);	  
+
     var body = "";
     res.on('data', function(chunk) { body+=chunk; } )
       .on('end', function() {
