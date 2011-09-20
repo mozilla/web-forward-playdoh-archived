@@ -1,12 +1,13 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
 
-from django.contrib import admin
+from django.contrib.admin import autodiscover
 
 import jingo
+from apply import admin
 
 
-admin.autodiscover()
+autodiscover()
 
 def _error_page(request, status):
     """Render error pages with jinja2."""
