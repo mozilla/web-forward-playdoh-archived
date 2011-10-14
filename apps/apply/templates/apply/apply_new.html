@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block page_title %}WebFWD — Apply{% endblock %}
+
+{% block body_id %}apply{% endblock %}
+{% block body_classes %}white{% endblock %}
+
+{% block content %}
+<section id="spacer" class="cf">
+    <!-- spacer section to act as background for fixed nav -->
+</section>
+
+<nav id="primaryNav" class="cf">
+    <div class="c2">
+        <a href="{{ url('index') }}"><img src="{{ MEDIA_URL }}img/fwd_logo.png" title="WebFWD" alt="WebFWD"></a>
+    </div>
+    <ul class="c4">
+        <li><a href="{{ url('index') }}#what" class="what">What</a></li>
+        <li><a href="{{ url('index') }}#how" class="how">How</a></li>
+        <li><a href="{{ url('index') }}#who" class="who">Who</a></li>
+        <li><a href="{{ url('index') }}#when" class="when">When</a></li>
+        <li><a href="{{ url('index') }}#why" class="why">Why</a></li>
+        <li><a href="{{ url('index') }}#buzz" class="buzz">Buzz</a></li>
+        <li>|</li>
+        <li><a class="Blog" href="http://blog.webfwd.org/">Blog</a></li>
+        <li><a class="FAQ" href="{{ url('faq') }}">FAQ</a></li>
+        <li><a class="mentors" href="{{ url('mentorship') }}">Mentors</a></li>
+        <li><a class="Projects" href="{{ url('projects') }}">Projects</a></li>
+        <li><a class="apply selected">Apply</a></li>
+    </ul>
+</nav>  
+
+<script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<script type="text/javascript">
+var m7x3s5 = new WufooForm();
+m7x3s5.initialize({
+'userName':'webfwd', 
+'formHash':'m7x3s5', 
+'autoResize':true,
+'height':'2620',
+'header':'show', 
+'ssl':true});
+m7x3s5.display();
+</script>
+
+{% endblock content %}
